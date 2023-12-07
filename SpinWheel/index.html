@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Wheel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="spinBTN">spin</div>
+        <div class="wheel">
+            <div class="number" style="--i:1; --clr: #DF3424;"><span>លើកដាច់</span></div>
+            <div class="number" style="--i:2;--clr:#FF0000;"><span>និយាយរឿង</span></div>
+            <div class="number" style="--i:3;--clr:#FF3FD6;"><span>ចេញលុយ</span></div>
+            <div class="number" style="--i:4;--clr:#024A69;"><span>ព្យាយាមផឹក<span></div>
+            <div class="number" style="--i:5;--clr:#818181;"><span>លើកដាច់</span></div>
+            <div class="number" style="--i:6;--clr:#00FF00;"><span>ផឹកខ្វែងដៃ</span></div>
+            <div class="number" style="--i:7;--clr:#0000FF;"><span>ផឹក១ស្មើ</span></div>
+            <div class="number" style="--i:8;--clr:#000000;"><span>ស្រវឹងដេក</span></div>
+            <div class="number" style="--i:9;--clr:#FFF01F;"><span>ព្យាយាមផឹក</span></div>
+            <div class="number" style="--i:10;--clr:#8ABC41;"><span>លើកដាច់</span></div>
+            <div class="number" style="--i:11;--clr: rgb(73, 141, 101);"><span>ចេញលុយ</span></div>
+            <div class="number" style="--i:12;--clr:#623f3f;"><span>ផឹក១ស្មើ</span></div>
+        </div>
+    </div>
+    <script>
+        let wheel = document.querySelector('.wheel');
+        let spinBTN = document.querySelector('.spinBTN');
+        let value = Math.ceil(Math.random() * 3000);
+
+        //creatd click event button spin
+        spinBTN.onclick = function(){
+            wheel.style.transform = "rotate("+ value +"deg)";
+            value += Math.ceil(Math.random() * 3000);
+        }
+    </script>
+</body>
+</html>

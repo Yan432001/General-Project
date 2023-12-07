@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+}
+.container{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .spinBTN{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.1em;
+    border: 4px solid rgba(0,0,0,0.65);
+    cursor: pointer;
+    user-select: none;
+}
+.container .spinBTN::before{
+    content: "";
+    position: absolute;
+    top: -28px;
+    height: 30px;
+    width: 20px;
+    background: #fff;
+    clip-path: polygon(50% 0, 15% 100%, 85% 100%); 
+}
+.container .wheel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-radius: 50%;
+    overflow: hidden; 
+    box-shadow: 0 0 0 5px #333,
+                0 0 0 15px #fff,
+                0 0 0 20px #111;
+    transition: transform 2s ease-in-out;
+}
+.container .wheel .number{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(30deg * var(--i)));
+    clip-path: polygon(0 0,44% 0, 100% 100%, 0 39%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+.container .wheel .number span{
+    position: relative;
+    transform: rotate(45deg);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #333;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+}
+/* .container .wheel .number span::after{
+    content: "$";
+    position: absolute;
+    font-size: 0.75em;
+    font-weight: 500; */
+/* } */

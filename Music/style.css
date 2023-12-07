@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+}
+input{
+    height: 0;
+    width: 0;
+}
+.controlBox{
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background: #606c88;
+    border-radius: 50%;
+    background: -webkit-radial-gradient(circle, #606c88 0%, #3f4c66 100%);
+    background: radial-gradient(circle, #606c88 0%, #3f4c66 100%);
+}
+.controlBox .button{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #252525;
+    margin-top: 25px;
+    margin-left: 25px;
+    border-radius: 50%;
+}
+
+.controlBox:has(input:checked) .button{
+    box-shadow: 0 0 30px 20px deepskyblue,
+    inset 0 60px 0px deepskyblue;
+
+}
+
+
+.musicBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    box-shadow: inset 0 5px 30px dodgerblue;
+    margin-left: 50px;
+    border-radius: 30px;
+    border: 2px groove dodgerblue;
+}
+.musicBar div{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    margin: 0 2px 0 2px;
+    border-radius: 30px;
+}
+.controlBox:has(input:checked) + .musicBar div{
+    box-shadow: 0 0 50px deepskyblue;
+    animation: anime 1s infinite linear;
+    animation-delay: calc(var(--i)*0.2s);
+}
+@keyframes anime{
+    0%{
+        height: 5%;
+        background-color: yellow;
+        filter: hue-rotate(90deg);
+    }
+    20%{
+        height: 60%;
+        background-color: white;
+        filter: hue-rotate(90deg);
+    }
+    40%{
+        height: 40%;
+        background-color: deepskyblue;
+        filter: hue-rotate(180deg);
+    }
+    60%{
+        height: 90%;
+        background-color: springgreen;
+        filter: hue-rotate(90deg);
+    }
+    80%{
+        height: 15%;
+        background-color: pink;
+        filter: hue-rotate(90deg);
+    }
+    100%{
+        height: 5%;
+        background-color: deeppink;
+        filter: hue-rotate(180deg);
+    }
+}
